@@ -7,6 +7,15 @@ export async function compressImageToWebP(
   maxWidth = 1600,
   quality = 0.82
 ): Promise<{ blob: Blob; fileName: string; sizeKB: number }> {
+  // Validasi tipe file & ukuran batas memori browser
+  const validMimes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
+  if (!validMimes.includes(file.type)) {
+    throw new Error('Format file tidak didukung. Harap unggah format JPG, PNG, atau WebP.');
+  }
+  if (file.size > 20 * 1024 * 1024) {
+    throw new Error('Ukuran file terlalu besar (maksimal 20MB sebelum kompresi).');
+  }
+
   return new Promise((resolve, reject) => {
     const img = new Image();
     const objectUrl = URL.createObjectURL(file);

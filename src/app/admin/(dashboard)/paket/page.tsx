@@ -203,10 +203,14 @@ export default function AdminPaketPage() {
       const supabase = createClient();
       let publicUrl = '';
 
-      // Coba upload ke bucket 'media' sesuai schema.sql
+      // Coba upload ke bucket 'media' sesuai schema.sql (cacheControl 1 tahun untuk optimasi bandwidth)
       const uploadRes = await supabase.storage
         .from('media')
-        .upload(`photos/${fileName}`, blob, { contentType: 'image/webp', upsert: true });
+        .upload(`photos/${fileName}`, blob, {
+          contentType: 'image/webp',
+          upsert: true,
+          cacheControl: '31536000',
+        });
 
       if (!uploadRes.error && uploadRes.data) {
         const { data: urlData } = supabase.storage.from('media').getPublicUrl(uploadRes.data.path);
@@ -215,7 +219,11 @@ export default function AdminPaketPage() {
         // Fallback jika bucket diberi nama 'packages'
         const fallbackRes = await supabase.storage
           .from('packages')
-          .upload(`photos/${fileName}`, blob, { contentType: 'image/webp', upsert: true });
+          .upload(`photos/${fileName}`, blob, {
+            contentType: 'image/webp',
+            upsert: true,
+            cacheControl: '31536000',
+          });
 
         if (!fallbackRes.error && fallbackRes.data) {
           const { data: urlData } = supabase.storage.from('packages').getPublicUrl(fallbackRes.data.path);
