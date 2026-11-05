@@ -264,15 +264,6 @@ export default function AdminTestimoniPage() {
 
         setTestimonials((prev) => [savedItem!, ...prev]);
       }
-          .insert([payload])
-          .select()
-          .single();
-
-        if (insertError) throw insertError;
-        savedItem = insertData as Testimonial;
-
-        setTestimonials((prev) => [savedItem!, ...prev]);
-      }
 
       setIsModalOpen(false);
       setIsDbEmpty(false);

@@ -1,0 +1,31 @@
+name: Supabase Keep-Alive
+
+on:
+  schedule:
+    # Jalan tiap hari jam 04:00 UTC (11:00 WIB)
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API
+        env:
+          SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_KEY" ]; then
+            echo "Secrets not configured, skipping."
+            exit 0
+          fi
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY" \
+            "$SUPABASE_URL/rest/v1/packages?select=id&limit=1")
+          echo "Supabase HTTP response: $STATUS"
+          if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 300 ]; then
+            echo "Supabase is active!"
+          else
+            echo "Warning: Response status $STATUS"
+          fi
