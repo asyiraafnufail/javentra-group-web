@@ -2,9 +2,14 @@ import { MessageCircle } from 'lucide-react';
 import { buildWhatsAppLink } from '@/lib/whatsapp';
 import { DEFAULT_SITE_SETTINGS } from '@/data/fallback';
 
-export function FloatingWA() {
+interface FloatingWAProps {
+  phone?: string;
+}
+
+export function FloatingWA({ phone }: FloatingWAProps = {}) {
+  const activePhone = phone || DEFAULT_SITE_SETTINGS.whatsapp_number;
   const waUrl = buildWhatsAppLink({
-    phone: DEFAULT_SITE_SETTINGS.whatsapp_number,
+    phone: activePhone,
     customMessage: 'Halo Javentra Group, saya ingin informasi reservasi dan ketersediaan paket.',
   });
 

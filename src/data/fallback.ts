@@ -2,7 +2,7 @@ import { Package, Testimonial } from '@/types/database';
 
 export const FALLBACK_PACKAGES: Package[] = [
   {
-    id: 'pkg-1',
+    id: 'e1010000-0000-4000-8000-000000000001',
     slug: 'arung-jeram-sungai-elo',
     name: 'Arung Jeram Sungai Elo (Grade II-III)',
     category: 'rafting',
@@ -37,7 +37,7 @@ export const FALLBACK_PACKAGES: Package[] = [
     updated_at: new Date().toISOString(),
   },
   {
-    id: 'pkg-2',
+    id: 'e1010000-0000-4000-8000-000000000002',
     slug: 'jeep-lava-tour-merapi-medium',
     name: 'Jeep Adventure Lava Tour Merapi (Medium Route)',
     category: 'jeep',
@@ -71,7 +71,7 @@ export const FALLBACK_PACKAGES: Package[] = [
     updated_at: new Date().toISOString(),
   },
   {
-    id: 'pkg-3',
+    id: 'e1010000-0000-4000-8000-000000000003',
     slug: 'vw-safari-borobudur-heritage',
     name: 'VW Safari Borobudur Heritage Tour',
     category: 'vw',
@@ -104,7 +104,7 @@ export const FALLBACK_PACKAGES: Package[] = [
     updated_at: new Date().toISOString(),
   },
   {
-    id: 'pkg-4',
+    id: 'e1010000-0000-4000-8000-000000000004',
     slug: 'outbound-team-building-gathering',
     name: 'Outbound & Team Building Gathering',
     category: 'outbound',
@@ -143,7 +143,7 @@ export const FALLBACK_PACKAGES: Package[] = [
 
 export const FALLBACK_TESTIMONIALS: Testimonial[] = [
   {
-    id: 'testi-1',
+    id: 'f1010000-0000-4000-8000-000000000001',
     client_name: 'Bambang Sudiro',
     origin: 'Rombongan PT Telkom Regional',
     rating: 5,
@@ -155,7 +155,7 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'testi-2',
+    id: 'f1010000-0000-4000-8000-000000000002',
     client_name: 'dr. Sarah Amanda',
     origin: 'Keluarga Mandiri — Jakarta Selatan',
     rating: 5,
@@ -167,7 +167,7 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: 'testi-3',
+    id: 'f1010000-0000-4000-8000-000000000003',
     client_name: 'Reza Fahlevi',
     origin: 'Komunitas Gowes Nusantara',
     rating: 5,

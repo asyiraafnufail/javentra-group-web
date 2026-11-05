@@ -26,7 +26,7 @@ export function BookingSteps() {
   ];
 
   return (
-    <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-stone-muted border-t border-b border-border-subtle">
+    <section id="cara-pesan" className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-stone-muted border-t border-b border-border-subtle">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-river-teal">

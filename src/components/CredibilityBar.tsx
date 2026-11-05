@@ -2,7 +2,7 @@ import { ShieldCheck, Award, HeartHandshake } from 'lucide-react';
 
 export function CredibilityBar() {
   return (
-    <section id="keselamatan" className="py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="keselamatan" className="py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white border-b border-border-subtle">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Narrative & Real Metrics */}

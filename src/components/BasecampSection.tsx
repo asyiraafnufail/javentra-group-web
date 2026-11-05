@@ -1,7 +1,14 @@
 import { MapPin, Clock, Bus, ExternalLink } from 'lucide-react';
 import { DEFAULT_SITE_SETTINGS } from '@/data/fallback';
+import { SiteSettings } from '@/types/database';
 
-export function BasecampSection() {
+interface BasecampSectionProps {
+  settings?: SiteSettings;
+}
+
+export function BasecampSection({ settings }: BasecampSectionProps = {}) {
+  const activeSettings = settings || DEFAULT_SITE_SETTINGS;
+
   return (
     <section id="lokasi" className="py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto w-full">
@@ -26,7 +33,7 @@ export function BasecampSection() {
                     Alamat Fisik
                   </span>
                   <span className="text-xs sm:text-sm text-slate-body">
-                    {DEFAULT_SITE_SETTINGS.basecamp_address}
+                    {activeSettings.basecamp_address}
                   </span>
                 </div>
               </div>
@@ -38,7 +45,7 @@ export function BasecampSection() {
                     Jam Operasional Layanan
                   </span>
                   <span className="text-xs sm:text-sm text-slate-body">
-                    {DEFAULT_SITE_SETTINGS.operational_hours}
+                    {activeSettings.operational_hours}
                   </span>
                 </div>
               </div>
@@ -57,7 +64,7 @@ export function BasecampSection() {
             </div>
 
             <a
-              href={DEFAULT_SITE_SETTINGS.maps_url}
+              href={activeSettings.maps_url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-slate-headline hover:bg-black px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl transition-colors shadow-sm"
