@@ -48,7 +48,7 @@ export function HeroSection() {
               Arung Jeram Elo, Jeep Merapi, VW Safari, dan Outbound Gathering.
             </p>
             <p className="text-xs sm:text-sm md:text-base text-stone-300 leading-relaxed max-w-2xl font-normal">
-              Pengalaman luar ruang di Magelang dan Yogyakarta yang bikin kecanduan.
+              Pengalaman aktivitas outdoor di Magelang dan Yogyakarta yang bikin kecanduan.
             </p>
 
             {/* Direct Action Buttons */}
