@@ -35,7 +35,7 @@ export function HeroSection() {
           <div className="relative z-10 flex items-center gap-3">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-stone-200">
               <ShieldCheck className="w-3.5 h-3.5 text-ochre-amber" strokeWidth={2} />
-              Operator Wisata Outdoor Berizin & Teruji
+              Event Organizer & Adventure Provider
             </span>
           </div>
 
@@ -45,10 +45,10 @@ export function HeroSection() {
               JAVENTRA<span className="text-ochre-amber">.</span>
             </h1>
             <p className="text-base sm:text-xl md:text-2xl font-bold tracking-tight text-stone-100 mb-3 sm:mb-4">
-              Arung Jeram Elo & Progo, Jeep Merapi, VW Safari, dan Outbound Gathering.
+              Arung Jeram Elo, Jeep Merapi, VW Safari, dan Outbound Gathering.
             </p>
             <p className="text-xs sm:text-sm md:text-base text-stone-300 leading-relaxed max-w-2xl font-normal">
-              Pengalaman luar ruang di Magelang dan Yogyakarta dengan standar keselamatan rescue internasional, armada terawat, dan instruktur bersertifikasi.
+              Pengalaman luar ruang di Magelang dan Yogyakarta yang bikin kecanduan.
             </p>
 
             {/* Direct Action Buttons */}
