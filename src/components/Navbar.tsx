@@ -68,12 +68,24 @@ export function Navbar({ settings }: NavbarProps = {}) {
         <Link
           href="/"
           onClick={() => setMenuOpen(false)}
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-2.5 sm:gap-3 group shrink-0"
         >
           <div className="w-10 h-10 rounded-xl bg-obsidian text-white flex items-center justify-center font-bold tracking-tighter shrink-0 shadow-sm">
             <Compass className="w-5 h-5 text-ochre-amber" strokeWidth={2} />
           </div>
-          <span className="text-lg sm:text-xl font-extrabold tracking-tight text-slate-headline group-hover:text-river-teal transition-colors">
+
+          {/* Mobile view (< md): Atas bawah dengan gap sangat rapat */}
+          <div className="flex md:hidden flex-col justify-center h-10 select-none -space-y-0.5">
+            <span className="text-[17px] font-black tracking-tight text-slate-headline leading-none group-hover:text-river-teal transition-colors">
+              JAVENTRA
+            </span>
+            <span className="text-[12.5px] font-black tracking-[0.2em] text-slate-headline leading-none group-hover:text-river-teal transition-colors">
+              GROUP
+            </span>
+          </div>
+
+          {/* iPad & Desktop view (>= md): Memanjang 1 baris */}
+          <span className="hidden md:inline-block text-lg lg:text-xl font-extrabold tracking-tight text-slate-headline group-hover:text-river-teal transition-colors whitespace-nowrap">
             JAVENTRA GROUP
           </span>
         </Link>

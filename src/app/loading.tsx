@@ -4,9 +4,15 @@ export default function RootLoading() {
       {/* Top Navbar Placeholder */}
       <div className="fixed top-0 left-0 right-0 z-50 h-16 md:h-18 bg-white/95 border-b border-border-subtle px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto h-full flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3">
             <div className="w-10 h-10 rounded-xl bg-stone-200 shrink-0" />
-            <div className="w-36 h-5 bg-stone-200 rounded-lg" />
+            {/* Mobile (< md): 2 baris rapat */}
+            <div className="flex md:hidden flex-col justify-center h-10 -space-y-0.5">
+              <div className="w-20 h-4 bg-stone-300 rounded" />
+              <div className="w-14 h-3 bg-stone-200 rounded mt-0.5" />
+            </div>
+            {/* iPad & Desktop (>= md): 1 baris memanjang */}
+            <div className="hidden md:block w-40 h-5 bg-stone-300 rounded" />
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="hidden md:block w-32 h-9 bg-stone-200 rounded-lg" />

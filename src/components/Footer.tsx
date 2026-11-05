@@ -17,11 +17,23 @@ export function Footer({ settings }: FooterProps = {}) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-white/10">
           {/* Brand Column */}
           <div className="md:col-span-5">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-white text-obsidian flex items-center justify-center font-bold">
+            <div className="flex items-center gap-2.5 sm:gap-3 mb-4 select-none">
+              <div className="w-10 h-10 rounded-xl bg-white text-obsidian flex items-center justify-center font-bold shrink-0 shadow-sm">
                 <Compass className="w-5 h-5 text-ochre-amber" strokeWidth={2} />
               </div>
-              <span className="text-xl font-extrabold tracking-tight text-white">
+
+              {/* Mobile (< md): 2 baris rapat */}
+              <div className="flex md:hidden flex-col justify-center h-10 -space-y-0.5">
+                <span className="text-[17px] font-black tracking-tight text-white leading-none">
+                  JAVENTRA
+                </span>
+                <span className="text-[12.5px] font-black tracking-[0.2em] text-stone-200 leading-none">
+                  GROUP
+                </span>
+              </div>
+
+              {/* iPad & Desktop (>= md): 1 baris memanjang */}
+              <span className="hidden md:inline-block text-xl font-extrabold tracking-tight text-white whitespace-nowrap">
                 JAVENTRA GROUP
               </span>
             </div>
